@@ -268,7 +268,7 @@
           "fieldValues": [
             {
               "fieldId": "audio_overview_url",
-              "fieldValue": "=http://localhost:8000/storage/v1/{{ $json.signedURL }}"
+              "fieldValue": "=http://localhost:18000/storage/v1/{{ $json.signedURL }}"
             },
             {
               "fieldId": "audio_url_expires_at",

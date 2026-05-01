@@ -1,0 +1,1196 @@
+LOGFLARE_NODE_HOST is: 127.0.0.1
+warning: the :backends key for the :logger application is deprecated.
+Here is how to proceed:
+
+1. If you want to set it to [:console], simply remove the option.
+
+2. If you want to disable logging, remove :backends and instead set:
+
+    config :logger, :default_handler, false
+
+3. If you want to configure any other backend, then it is recommended
+   to add `{:logger_backends, "~> 1.0"}` as a dependency and call
+   `LoggerBackends.add(CustomBackend)` in your application start callback
+
+  (logger 1.19.5) lib/logger/app.ex:20: Logger.App.start/2
+  (kernel 10.2.7.3) application_master.erl:295: :application_master.start_it_old/4
+
+
+05:22:12.329 [info] Starting migration
+
+05:22:13.302 [error] Postgrex.Protocol (#PID<0.151.0>) failed to connect: ** (Postgrex.Error) FATAL 3D000 (invalid_catalog_name) database "_supabase" does not exist
+
+05:22:13.302 [error] Postgrex.Protocol (#PID<0.150.0>) failed to connect: ** (Postgrex.Error) FATAL 3D000 (invalid_catalog_name) database "_supabase" does not exist
+
+05:22:14.862 [error] Postgrex.Protocol (#PID<0.151.0>) failed to connect: ** (Postgrex.Error) FATAL 3D000 (invalid_catalog_name) database "_supabase" does not exist
+
+05:22:15.595 [error] Postgrex.Protocol (#PID<0.150.0>) failed to connect: ** (Postgrex.Error) FATAL 3D000 (invalid_catalog_name) database "_supabase" does not exist
+
+05:22:17.737 [error] Postgrex.Protocol (#PID<0.151.0>) failed to connect: ** (Postgrex.Error) FATAL 3D000 (invalid_catalog_name) database "_supabase" does not exist
+
+05:22:17.888 [error] Postgrex.Protocol (#PID<0.150.0>) failed to connect: ** (Postgrex.Error) FATAL 3D000 (invalid_catalog_name) database "_supabase" does not exist
+
+05:22:19.364 [error] Postgrex.Protocol (#PID<0.150.0>) failed to connect: ** (Postgrex.Error) FATAL 3D000 (invalid_catalog_name) database "_supabase" does not exist
+
+05:22:21.448 [error] Postgrex.Protocol (#PID<0.151.0>) failed to connect: ** (Postgrex.Error) FATAL 3D000 (invalid_catalog_name) database "_supabase" does not exist
+
+05:22:23.020 [error] Could not create schema migrations table. This error usually happens due to the following:
+
+  * The database does not exist
+  * The "schema_migrations" table, which Ecto uses for managing
+    migrations, was defined by another library
+  * There is a deadlock while migrating (such as using concurrent
+    indexes with a migration_lock)
+
+To fix the first issue, run "mix ecto.create" for the desired MIX_ENV.
+
+To address the second, you can run "mix ecto.drop" followed by
+"mix ecto.create", both for the desired MIX_ENV. Alternatively you may
+configure Ecto to use another table and/or repository for managing
+migrations:
+
+    config :logflare, Logflare.Repo,
+      migration_source: "some_other_table_for_schema_migrations",
+      migration_repo: AnotherRepoForSchemaMigrations
+
+The full error report is shown below.
+
+** (DBConnection.ConnectionError) connection not available and request was dropped from queue after 11931ms. This means requests are coming in and your connection pool cannot serve them fast enough. You can address this by:
+
+  1. Ensuring your database is available and that you can connect to it
+  2. Tracking down slow queries and making sure they are running fast enough
+  3. Increasing the pool_size (although this increases resource consumption)
+  4. Allowing requests to wait longer by increasing :queue_target and :queue_interval
+
+See DBConnection.start_link/2 for more information
+
+    (ecto_sql 3.13.2) lib/ecto/adapters/sql.ex:1098: Ecto.Adapters.SQL.raise_sql_call_error/1
+    (elixir 1.19.5) lib/enum.ex:1688: Enum."-map/2-lists^map/1-1-"/2
+    (ecto_sql 3.13.2) lib/ecto/adapters/sql.ex:1219: Ecto.Adapters.SQL.execute_ddl/4
+    (ecto_sql 3.13.2) lib/ecto/migrator.ex:779: Ecto.Migrator.verbose_schema_migration/3
+    (ecto_sql 3.13.2) lib/ecto/migrator.ex:563: Ecto.Migrator.lock_for_migrations/4
+    (ecto_sql 3.13.2) lib/ecto/migrator.ex:432: Ecto.Migrator.run/4
+    (ecto_sql 3.13.2) lib/ecto/migrator.ex:170: Ecto.Migrator.with_repo/3
+    nofile:1: (file)
+warning: the :backends key for the :logger application is deprecated.
+Here is how to proceed:
+
+1. If you want to set it to [:console], simply remove the option.
+
+2. If you want to disable logging, remove :backends and instead set:
+
+    config :logger, :default_handler, false
+
+3. If you want to configure any other backend, then it is recommended
+   to add `{:logger_backends, "~> 1.0"}` as a dependency and call
+   `LoggerBackends.add(CustomBackend)` in your application start callback
+
+  (logger 1.19.5) lib/logger/app.ex:20: Logger.App.start/2
+  (kernel 10.2.7.3) application_master.erl:295: :application_master.start_it_old/4
+
+
+05:22:50.135 [error] The :mime library has been compiled with the following custom types:
+
+    %{}
+
+But it is being started with the following types:
+
+    %{"application/x-protobuf" => ["protobuf"]}
+
+We are going to dynamically recompile it during boot,
+but please clean the :mime dependency to make sure it is recompiled:
+
+    $ mix deps.clean mime --build
+
+warning: redefining module MIME (current version loaded from /opt/app/rel/logflare/lib/mime-1.6.0/ebin/Elixir.MIME.beam)
+└─ /app/deps/mime/lib/mime/application.ex:27: MIME (module)
+
+
+05:22:53.396 [error] Postgrex.Protocol (#PID<0.6450.0>) failed to connect: ** (Postgrex.Error) FATAL 3D000 (invalid_catalog_name) database "_supabase" does not exist
+
+05:22:53.396 [error] Postgrex.Protocol (#PID<0.6449.0>) failed to connect: ** (Postgrex.Error) FATAL 3D000 (invalid_catalog_name) database "_supabase" does not exist
+
+05:22:53.396 [error] Postgrex.Protocol (#PID<0.6447.0>) failed to connect: ** (Postgrex.Error) FATAL 3D000 (invalid_catalog_name) database "_supabase" does not exist
+
+05:22:53.396 [error] Postgrex.Protocol (#PID<0.6448.0>) failed to connect: ** (Postgrex.Error) FATAL 3D000 (invalid_catalog_name) database "_supabase" does not exist
+
+05:22:53.409 [error] Postgrex.Protocol (#PID<0.6439.0>) failed to connect: ** (Postgrex.Error) FATAL 3D000 (invalid_catalog_name) database "_supabase" does not exist
+
+05:22:53.411 [error] Postgrex.Protocol (#PID<0.6443.0>) failed to connect: ** (Postgrex.Error) FATAL 3D000 (invalid_catalog_name) database "_supabase" does not exist
+
+05:22:53.412 [error] Postgrex.Protocol (#PID<0.6445.0>) failed to connect: ** (Postgrex.Error) FATAL 3D000 (invalid_catalog_name) database "_supabase" does not exist
+
+05:22:53.413 [error] Postgrex.Protocol (#PID<0.6440.0>) failed to connect: ** (Postgrex.Error) FATAL 3D000 (invalid_catalog_name) database "_supabase" does not exist
+
+05:22:53.414 [error] Postgrex.Protocol (#PID<0.6444.0>) failed to connect: ** (Postgrex.Error) FATAL 3D000 (invalid_catalog_name) database "_supabase" does not exist
+
+05:22:53.413 [error] Postgrex.Protocol (#PID<0.6446.0>) failed to connect: ** (Postgrex.Error) FATAL 3D000 (invalid_catalog_name) database "_supabase" does not exist
+
+05:22:53.524 [info] ClickHouse mapping configs compiled and cached
+
+05:22:53.900 [warning] Elixir.Logflare.ErlSysMon message: {:monitor, #PID<0.6804.0>, :long_message_queue, true} |
+ process info: ["$initial_call": {:supervisor, ThousandIsland.Server, 1}, "$ancestors": [LogflareWeb.Endpoint, Logflare.Supervisor, #PID<0.6401.0>]]
+
+05:22:53.986 [info] Running LogflareWeb.Endpoint with Bandit 1.9.0 at 0.0.0.0:4000 (http)
+
+05:22:53.986 [warning] Elixir.Logflare.ErlSysMon message: {:monitor, #PID<0.6804.0>, :long_message_queue, false} |
+ process info: ["$initial_call": {:supervisor, ThousandIsland.Server, 1}, "$ancestors": [LogflareWeb.Endpoint, Logflare.Supervisor, #PID<0.6401.0>]]
+
+05:22:53.993 [info] Access LogflareWeb.Endpoint at http://localhost:4000
+
+05:22:54.026 [warning] GenSingleton unknown case | failed to start child: {:error, {{:error, :fatal, "3D000", :invalid_catalog_name, "database \"_supabase\" does not exist", [file: "postinit.c", line: "945", routine: "InitPostgres", severity: "FATAL"]}, {:child, :undefined, Cainophile.Adapters.Postgres, {Cainophile.Adapters.Postgres, :start_link, [[register: {:via, :syn, {:core, Logflare.PgPublisher}}, epgsql: %{port: 5432, host: ~c"db", password: "your-super-secret-and-long-postgres-password", username: "supabase_admin", tcp_opts: [], database: "_supabase"}, slot: :temporary, wal_position: {"0", "0"}, publications: ["logflare_pub"]]]}, :permanent, false, 5000, :worker, [Cainophile.Adapters.Postgres]}}}
+
+05:22:54.464 [error] Postgrex.Protocol (#PID<0.6439.0>) failed to connect: ** (Postgrex.Error) FATAL 3D000 (invalid_catalog_name) database "_supabase" does not exist
+
+05:22:54.642 [error] Postgrex.Protocol (#PID<0.6445.0>) failed to connect: ** (Postgrex.Error) FATAL 3D000 (invalid_catalog_name) database "_supabase" does not exist
+
+05:22:54.674 [error] Postgrex.Protocol (#PID<0.6440.0>) failed to connect: ** (Postgrex.Error) FATAL 3D000 (invalid_catalog_name) database "_supabase" does not exist
+
+05:22:54.755 [error] Postgrex.Protocol (#PID<0.6444.0>) failed to connect: ** (Postgrex.Error) FATAL 3D000 (invalid_catalog_name) database "_supabase" does not exist
+
+05:22:55.345 [error] Postgrex.Protocol (#PID<0.6449.0>) failed to connect: ** (Postgrex.Error) FATAL 3D000 (invalid_catalog_name) database "_supabase" does not exist
+
+05:22:55.506 [error] Postgrex.Protocol (#PID<0.6450.0>) failed to connect: ** (Postgrex.Error) FATAL 3D000 (invalid_catalog_name) database "_supabase" does not exist
+
+05:22:55.516 [error] Postgrex.Protocol (#PID<0.6446.0>) failed to connect: ** (Postgrex.Error) FATAL 3D000 (invalid_catalog_name) database "_supabase" does not exist
+
+05:22:56.015 [error] Postgrex.Protocol (#PID<0.6443.0>) failed to connect: ** (Postgrex.Error) FATAL 3D000 (invalid_catalog_name) database "_supabase" does not exist
+
+05:22:56.025 [error] Postgrex.Protocol (#PID<0.6448.0>) failed to connect: ** (Postgrex.Error) FATAL 3D000 (invalid_catalog_name) database "_supabase" does not exist
+
+05:22:56.056 [error] Postgrex.Protocol (#PID<0.6447.0>) failed to connect: ** (Postgrex.Error) FATAL 3D000 (invalid_catalog_name) database "_supabase" does not exist
+
+05:22:56.620 [info] tzdata release in place is from a file last modified Thu, 05 Sep 2024 18:47:42 GMT. Release file on server was last modified Thu, 23 Apr 2026 11:51:51 GMT.
+
+05:22:56.936 [error] Postgrex.Protocol (#PID<0.6439.0>) failed to connect: ** (Postgrex.Error) FATAL 3D000 (invalid_catalog_name) database "_supabase" does not exist
+
+05:22:56.980 [error] Postgrex.Protocol (#PID<0.6444.0>) failed to connect: ** (Postgrex.Error) FATAL 3D000 (invalid_catalog_name) database "_supabase" does not exist
+
+05:22:56.986 [error] Postgrex.Protocol (#PID<0.6445.0>) failed to connect: ** (Postgrex.Error) FATAL 3D000 (invalid_catalog_name) database "_supabase" does not exist
+warning: Range.new/2 and first..last default to a step of -1 when last < first. Use Range.new(first, last, -1) or first..last//-1, or pass 1 if that was your intention
+  (tzdata 1.1.2) lib/tzdata/util.ex:67: Tzdata.Util.last_weekday_of_month/3
+  (tzdata 1.1.2) lib/tzdata/util.ex:203: Tzdata.Util.tz_day_to_date/3
+  (tzdata 1.1.2) lib/tzdata/util.ex:268: Tzdata.Util.transform_until_datetime/2
+  (tzdata 1.1.2) lib/tzdata/parser.ex:138: Tzdata.Parser.captured_zone_map_clean_up/1
+  (tzdata 1.1.2) lib/tzdata/parser.ex:77: Tzdata.Parser.process_zone/5
+
+
+05:22:57.448 [error] Postgrex.Protocol (#PID<0.6440.0>) failed to connect: ** (Postgrex.Error) FATAL 3D000 (invalid_catalog_name) database "_supabase" does not exist
+warning: Range.new/2 and first..last default to a step of -1 when last < first. Use Range.new(first, last, -1) or first..last//-1, or pass 1 if that was your intention
+  (tzdata 1.1.2) lib/tzdata/util.ex:99: Tzdata.Util.first_weekday_of_month_at_most/4
+  (tzdata 1.1.2) lib/tzdata/period_builder.ex:356: anonymous fn/2 in Tzdata.PeriodBuilder.sort_rules_by_time/2
+  (elixir 1.19.5) lib/enum.ex:1688: Enum."-map/2-lists^map/1-1-"/2
+  (tzdata 1.1.2) lib/tzdata/period_builder.ex:356: Tzdata.PeriodBuilder.sort_rules_by_time/2
+  (tzdata 1.1.2) lib/tzdata/period_builder.ex:228: Tzdata.PeriodBuilder.calc_rule_periods/8
+
+
+05:22:58.141 [error] Postgrex.Protocol (#PID<0.6449.0>) failed to connect: ** (Postgrex.Error) FATAL 3D000 (invalid_catalog_name) database "_supabase" does not exist
+
+05:22:58.159 [info] Tzdata has updated the release from 2024b to 2026b
+
+05:22:58.968 [error] Postgrex.Protocol (#PID<0.6446.0>) failed to connect: ** (Postgrex.Error) FATAL 3D000 (invalid_catalog_name) database "_supabase" does not exist
+
+05:22:59.499 [error] Postgrex.Protocol (#PID<0.6450.0>) failed to connect: ** (Postgrex.Error) FATAL 3D000 (invalid_catalog_name) database "_supabase" does not exist
+
+05:23:00.436 [error] Postgrex.Protocol (#PID<0.6443.0>) failed to connect: ** (Postgrex.Error) FATAL 3D000 (invalid_catalog_name) database "_supabase" does not exist
+
+05:23:00.438 [error] Postgrex.Protocol (#PID<0.6445.0>) failed to connect: ** (Postgrex.Error) FATAL 3D000 (invalid_catalog_name) database "_supabase" does not exist
+
+05:23:00.620 [error] Postgrex.Protocol (#PID<0.6444.0>) failed to connect: ** (Postgrex.Error) FATAL 3D000 (invalid_catalog_name) database "_supabase" does not exist
+
+05:23:00.702 [error] Postgrex.Protocol (#PID<0.6447.0>) failed to connect: ** (Postgrex.Error) FATAL 3D000 (invalid_catalog_name) database "_supabase" does not exist
+
+05:23:01.641 [error] Postgrex.Protocol (#PID<0.6448.0>) failed to connect: ** (Postgrex.Error) FATAL 3D000 (invalid_catalog_name) database "_supabase" does not exist
+
+05:23:02.881 [error] Postgrex.Protocol (#PID<0.6439.0>) failed to connect: ** (Postgrex.Error) FATAL 3D000 (invalid_catalog_name) database "_supabase" does not exist
+
+05:23:03.133 [error] Postgrex.Protocol (#PID<0.6449.0>) failed to connect: ** (Postgrex.Error) FATAL 3D000 (invalid_catalog_name) database "_supabase" does not exist
+
+05:23:03.230 [error] Postgrex.Protocol (#PID<0.6446.0>) failed to connect: ** (Postgrex.Error) FATAL 3D000 (invalid_catalog_name) database "_supabase" does not exist
+
+05:23:05.231 [error] Postgrex.Protocol (#PID<0.6440.0>) failed to connect: ** (Postgrex.Error) FATAL 3D000 (invalid_catalog_name) database "_supabase" does not exist
+
+05:23:05.321 [error] GenServer Logflare.SourceSchemas.CacheWarmer terminating
+** (DBConnection.ConnectionError) connection not available and request was dropped from queue after 11863ms. This means requests are coming in and your connection pool cannot serve them fast enough. You can address this by:
+
+  1. Ensuring your database is available and that you can connect to it
+  2. Tracking down slow queries and making sure they are running fast enough
+  3. Increasing the pool_size (although this increases resource consumption)
+  4. Allowing requests to wait longer by increasing :queue_target and :queue_interval
+
+See DBConnection.start_link/2 for more information
+
+    (ecto_sql 3.13.2) lib/ecto/adapters/sql.ex:1098: Ecto.Adapters.SQL.raise_sql_call_error/1
+    (ecto_sql 3.13.2) lib/ecto/adapters/sql.ex:996: Ecto.Adapters.SQL.execute/6
+    (ecto 3.13.5) lib/ecto/repo/queryable.ex:241: Ecto.Repo.Queryable.execute/4
+    (ecto 3.13.5) lib/ecto/repo/queryable.ex:19: Ecto.Repo.Queryable.all/3
+    (logflare 1.31.2) lib/logflare/source_schemas/cache_warmer.ex:19: Logflare.SourceSchemas.CacheWarmer.execute/1
+    (logflare 1.31.2) deps/cachex/lib/cachex/provision.ex:101: Logflare.SourceSchemas.CacheWarmer.handle_info/2
+    (stdlib 6.2.2.2) gen_server.erl:2345: :gen_server.try_handle_info/3
+    (stdlib 6.2.2.2) gen_server.erl:2433: :gen_server.handle_msg/6
+Last message: {:cachex_warmer, [#PID<0.6569.0>]}
+
+05:23:05.319 [error] GenServer Logflare.Rules.CacheWarmer terminating
+** (DBConnection.ConnectionError) connection not available and request was dropped from queue after 11834ms. This means requests are coming in and your connection pool cannot serve them fast enough. You can address this by:
+
+  1. Ensuring your database is available and that you can connect to it
+  2. Tracking down slow queries and making sure they are running fast enough
+  3. Increasing the pool_size (although this increases resource consumption)
+  4. Allowing requests to wait longer by increasing :queue_target and :queue_interval
+
+See DBConnection.start_link/2 for more information
+
+    (ecto_sql 3.13.2) lib/ecto/adapters/sql.ex:1098: Ecto.Adapters.SQL.raise_sql_call_error/1
+    (ecto_sql 3.13.2) lib/ecto/adapters/sql.ex:996: Ecto.Adapters.SQL.execute/6
+    (ecto 3.13.5) lib/ecto/repo/queryable.ex:241: Ecto.Repo.Queryable.execute/4
+    (ecto 3.13.5) lib/ecto/repo/queryable.ex:19: Ecto.Repo.Queryable.all/3
+    (logflare 1.31.2) lib/logflare/rules/cache_warmer.ex:18: Logflare.Rules.CacheWarmer.execute/1
+    (logflare 1.31.2) deps/cachex/lib/cachex/provision.ex:101: Logflare.Rules.CacheWarmer.handle_info/2
+    (stdlib 6.2.2.2) gen_server.erl:2345: :gen_server.try_handle_info/3
+    (stdlib 6.2.2.2) gen_server.erl:2433: :gen_server.handle_msg/6
+Last message: {:cachex_warmer, [#PID<0.6569.0>]}
+
+05:23:05.319 [error] GenServer Logflare.Users.CacheWarmer terminating
+** (DBConnection.ConnectionError) connection not available and request was dropped from queue after 11930ms. This means requests are coming in and your connection pool cannot serve them fast enough. You can address this by:
+
+  1. Ensuring your database is available and that you can connect to it
+  2. Tracking down slow queries and making sure they are running fast enough
+  3. Increasing the pool_size (although this increases resource consumption)
+  4. Allowing requests to wait longer by increasing :queue_target and :queue_interval
+
+See DBConnection.start_link/2 for more information
+
+    (ecto_sql 3.13.2) lib/ecto/adapters/sql.ex:1098: Ecto.Adapters.SQL.raise_sql_call_error/1
+    (ecto_sql 3.13.2) lib/ecto/adapters/sql.ex:996: Ecto.Adapters.SQL.execute/6
+    (ecto 3.13.5) lib/ecto/repo/queryable.ex:241: Ecto.Repo.Queryable.execute/4
+    (ecto 3.13.5) lib/ecto/repo/queryable.ex:19: Ecto.Repo.Queryable.all/3
+    (logflare 1.31.2) lib/logflare/users/cache_warmer.ex:7: Logflare.Users.CacheWarmer.execute/1
+    (logflare 1.31.2) deps/cachex/lib/cachex/provision.ex:101: Logflare.Users.CacheWarmer.handle_info/2
+    (stdlib 6.2.2.2) gen_server.erl:2345: :gen_server.try_handle_info/3
+    (stdlib 6.2.2.2) gen_server.erl:2433: :gen_server.handle_msg/6
+Last message: {:cachex_warmer, [#PID<0.6569.0>]}
+
+05:23:05.321 [error] GenServer Logflare.Backends.CacheWarmer terminating
+** (DBConnection.ConnectionError) connection not available and request was dropped from queue after 11919ms. This means requests are coming in and your connection pool cannot serve them fast enough. You can address this by:
+
+  1. Ensuring your database is available and that you can connect to it
+  2. Tracking down slow queries and making sure they are running fast enough
+  3. Increasing the pool_size (although this increases resource consumption)
+  4. Allowing requests to wait longer by increasing :queue_target and :queue_interval
+
+See DBConnection.start_link/2 for more information
+
+    (ecto_sql 3.13.2) lib/ecto/adapters/sql.ex:1098: Ecto.Adapters.SQL.raise_sql_call_error/1
+    (ecto_sql 3.13.2) lib/ecto/adapters/sql.ex:996: Ecto.Adapters.SQL.execute/6
+    (ecto 3.13.5) lib/ecto/repo/queryable.ex:241: Ecto.Repo.Queryable.execute/4
+    (ecto 3.13.5) lib/ecto/repo/queryable.ex:19: Ecto.Repo.Queryable.all/3
+    (logflare 1.31.2) lib/logflare/backends.ex:103: Logflare.Backends.list_backends/1
+    (logflare 1.31.2) lib/logflare/backends/cache_warmer.ex:7: Logflare.Backends.CacheWarmer.execute/1
+    (logflare 1.31.2) deps/cachex/lib/cachex/provision.ex:101: Logflare.Backends.CacheWarmer.handle_info/2
+    (stdlib 6.2.2.2) gen_server.erl:2345: :gen_server.try_handle_info/3
+Last message: {:cachex_warmer, [#PID<0.6569.0>]}
+
+05:23:05.319 [error] GenServer Logflare.Sources.CacheWarmer terminating
+** (DBConnection.ConnectionError) connection not available and request was dropped from queue after 11892ms. This means requests are coming in and your connection pool cannot serve them fast enough. You can address this by:
+
+  1. Ensuring your database is available and that you can connect to it
+  2. Tracking down slow queries and making sure they are running fast enough
+  3. Increasing the pool_size (although this increases resource consumption)
+  4. Allowing requests to wait longer by increasing :queue_target and :queue_interval
+
+See DBConnection.start_link/2 for more information
+
+    (ecto_sql 3.13.2) lib/ecto/adapters/sql.ex:1098: Ecto.Adapters.SQL.raise_sql_call_error/1
+    (ecto_sql 3.13.2) lib/ecto/adapters/sql.ex:996: Ecto.Adapters.SQL.execute/6
+    (ecto 3.13.5) lib/ecto/repo/queryable.ex:241: Ecto.Repo.Queryable.execute/4
+    (ecto 3.13.5) lib/ecto/repo/queryable.ex:19: Ecto.Repo.Queryable.all/3
+    (logflare 1.31.2) lib/logflare/sources/cache_warmer.ex:16: Logflare.Sources.CacheWarmer.execute/1
+    (logflare 1.31.2) deps/cachex/lib/cachex/provision.ex:101: Logflare.Sources.CacheWarmer.handle_info/2
+    (stdlib 6.2.2.2) gen_server.erl:2345: :gen_server.try_handle_info/3
+    (stdlib 6.2.2.2) gen_server.erl:2433: :gen_server.handle_msg/6
+Last message: {:cachex_warmer, [#PID<0.6569.0>]}
+
+05:23:05.361 [error] ** (Protocol.UndefinedError) protocol String.Chars not implemented for DBConnection.ConnectionError (a struct). This protocol is implemented for: Atom, BitString, Ch.Query, ConfigCat.User, Date, DateTime, Decimal, Explorer.Duration, Float, Integer, List, Money, NaiveDateTime, OpenApiSpex.Cast.Error, Phoenix.LiveComponent.CID, Postgrex.Copy, Postgrex.Query, Tesla.Client, Tesla.Env, Time, URI, Version, Version.Requirement
+
+Got value:
+
+    %DBConnection.ConnectionError{
+      message: "connection not available and request was dropped from queue after 10034ms. This means requests are coming in and your connection pool cannot serve them fast enough. You can address this by:\n\n  1. Ensuring your database is available and that you can connect to it\n  2. Tracking down slow queries and making sure they are running fast enough\n  3. Increasing the pool_size (although this increases resource consumption)\n  4. Allowing requests to wait longer by increasing :queue_target and :queue_interval\n\nSee DBConnection.start_link/2 for more information\n",
+      severity: :error,
+      reason: :queue_timeout
+    }
+
+    (elixir 1.19.5) lib/string/chars.ex:7: String.Chars.impl_for!/1
+    (elixir 1.19.5) lib/string/chars.ex:26: String.Chars.to_string/1
+    (logflare 1.31.2) lib/logflare/repo.ex:28: Logflare.Repo.get_uptime/0
+    (logflare 1.31.2) lib/logflare_web/controllers/health_check_controller.ex:11: LogflareWeb.HealthCheckController.check/2
+    (logflare 1.31.2) lib/logflare_web/controllers/health_check_controller.ex:1: LogflareWeb.HealthCheckController.action/2
+    (logflare 1.31.2) lib/logflare_web/controllers/health_check_controller.ex:1: LogflareWeb.HealthCheckController.phoenix_controller_pipeline/2
+    (phoenix 1.7.21) lib/phoenix/router.ex:484: Phoenix.Router.__call__/5
+    (logflare 1.31.2) lib/logflare_web/endpoint.ex:1: LogflareWeb.Endpoint.plug_builder_call/2
+
+
+05:23:05.631 [error] Postgrex.Protocol (#PID<0.6450.0>) failed to connect: ** (Postgrex.Error) FATAL 3D000 (invalid_catalog_name) database "_supabase" does not exist
+
+05:23:07.354 [error] Postgrex.Protocol (#PID<0.6444.0>) failed to connect: ** (Postgrex.Error) FATAL 3D000 (invalid_catalog_name) database "_supabase" does not exist
+
+05:23:07.428 [error] Postgrex.Protocol (#PID<0.6445.0>) failed to connect: ** (Postgrex.Error) FATAL 3D000 (invalid_catalog_name) database "_supabase" does not exist
+
+05:23:08.337 [error] Postgrex.Protocol (#PID<0.6449.0>) failed to connect: ** (Postgrex.Error) FATAL 3D000 (invalid_catalog_name) database "_supabase" does not exist
+
+05:23:09.231 [error] Postgrex.Protocol (#PID<0.6443.0>) failed to connect: ** (Postgrex.Error) FATAL 3D000 (invalid_catalog_name) database "_supabase" does not exist
+
+05:23:09.324 [error] ** (CaseClauseError) no case clause matching:
+
+    {:error,
+     %Cachex.Error{
+       message: "connection not available and request was dropped from queue after 10709ms. This means requests are coming in and your connection pool cannot serve them fast enough. You can address this by:\n\n  1. Ensuring your database is available and that you can connect to it\n  2. Tracking down slow queries and making sure they are running fast enough\n  3. Increasing the pool_size (although this increases resource consumption)\n  4. Allowing requests to wait longer by increasing :queue_target and :queue_interval\n\nSee DBConnection.start_link/2 for more information\n",
+       stack: [
+         {Ecto.Adapters.SQL, :raise_sql_call_error, 1,
+          [
+            file: ~c"lib/ecto/adapters/sql.ex",
+            line: 1098,
+            error_info: %{module: Exception}
+          ]},
+         {Ecto.Adapters.SQL, :execute, 6,
+          [file: ~c"lib/ecto/adapters/sql.ex", line: 996]},
+         {Ecto.Repo.Queryable, :execute, 4,
+          [file: ~c"lib/ecto/repo/queryable.ex", line: 241]},
+         {Ecto.Repo.Queryable, :all, 3,
+          [file: ~c"lib/ecto/repo/queryable.ex", line: 19]},
+         {Ecto.Repo.Queryable, :one, 3,
+          [file: ~c"lib/ecto/repo/queryable.ex", line: 163]},
+         {ExOauth2Provider, :load_access_token, 2,
+          [file: ~c"lib/ex_oauth2_provider.ex", line: 63]},
+         {ExOauth2Provider, :authenticate_token, 2,
+          [file: ~c"lib/ex_oauth2_provider.ex", line: 56]},
+         {Logflare.Auth, :verify_access_token_and_fetch_owner, 2,
+          [file: ~c"lib/logflare/auth.ex", line: 168]},
+         {Cachex.Services.Courier, :dispatch, 3,
+          [file: ~c"lib/cachex/services/courier.ex", line: 43]},
+         {Cachex.Router, :route_local, 3,
+          [file: ~c"lib/cachex/router.ex", line: 182]},
+         {Logflare.ContextCache, :apply_fun, 3,
+          [file: ~c"lib/logflare/context_cache.ex", line: 48]},
+         {LogflareWeb.Plugs.VerifyApiAccess, :identify_requestor, 2,
+          [
+            file: ~c"lib/logflare_web/controllers/plugs/verify_api_access.ex",
+            line: 83
+          ]},
+         {LogflareWeb.Plugs.VerifyApiAccess, :call, 2,
+          [
+            file: ~c"lib/logflare_web/controllers/plugs/verify_api_access.ex",
+            line: 35
+          ]},
+         {LogflareWeb.Router, :require_ingest_api_auth, ...}
+       ]
+     }}
+
+    (logflare 1.31.2) lib/logflare/context_cache.ex:48: Logflare.ContextCache.apply_fun/3
+    (logflare 1.31.2) lib/logflare_web/controllers/plugs/verify_api_access.ex:83: LogflareWeb.Plugs.VerifyApiAccess.identify_requestor/2
+    (logflare 1.31.2) lib/logflare_web/controllers/plugs/verify_api_access.ex:35: LogflareWeb.Plugs.VerifyApiAccess.call/2
+    (logflare 1.31.2) LogflareWeb.Router.require_ingest_api_auth/2
+    (logflare 1.31.2) lib/logflare_web/router.ex:1: LogflareWeb.Router.__pipe_through15__/1
+    (phoenix 1.7.21) lib/phoenix/router.ex:475: Phoenix.Router.__call__/5
+    (logflare 1.31.2) lib/logflare_web/endpoint.ex:1: LogflareWeb.Endpoint.plug_builder_call/2
+    (logflare 1.31.2) lib/logflare_web/endpoint.ex:1: LogflareWeb.Endpoint.call/2
+
+
+05:23:09.328 [error] ** (CaseClauseError) no case clause matching:
+
+    {:error,
+     %Cachex.Error{
+       message: "connection not available and request was dropped from queue after 10709ms. This means requests are coming in and your connection pool cannot serve them fast enough. You can address this by:\n\n  1. Ensuring your database is available and that you can connect to it\n  2. Tracking down slow queries and making sure they are running fast enough\n  3. Increasing the pool_size (although this increases resource consumption)\n  4. Allowing requests to wait longer by increasing :queue_target and :queue_interval\n\nSee DBConnection.start_link/2 for more information\n",
+       stack: [
+         {Ecto.Adapters.SQL, :raise_sql_call_error, 1,
+          [
+            file: ~c"lib/ecto/adapters/sql.ex",
+            line: 1098,
+            error_info: %{module: Exception}
+          ]},
+         {Ecto.Adapters.SQL, :execute, 6,
+          [file: ~c"lib/ecto/adapters/sql.ex", line: 996]},
+         {Ecto.Repo.Queryable, :execute, 4,
+          [file: ~c"lib/ecto/repo/queryable.ex", line: 241]},
+         {Ecto.Repo.Queryable, :all, 3,
+          [file: ~c"lib/ecto/repo/queryable.ex", line: 19]},
+         {Ecto.Repo.Queryable, :one, 3,
+          [file: ~c"lib/ecto/repo/queryable.ex", line: 163]},
+         {ExOauth2Provider, :load_access_token, 2,
+          [file: ~c"lib/ex_oauth2_provider.ex", line: 63]},
+         {ExOauth2Provider, :authenticate_token, 2,
+          [file: ~c"lib/ex_oauth2_provider.ex", line: 56]},
+         {Logflare.Auth, :verify_access_token_and_fetch_owner, 2,
+          [file: ~c"lib/logflare/auth.ex", line: 168]},
+         {Cachex.Services.Courier, :dispatch, 3,
+          [file: ~c"lib/cachex/services/courier.ex", line: 43]},
+         {Cachex.Router, :route_local, 3,
+          [file: ~c"lib/cachex/router.ex", line: 182]},
+         {Logflare.ContextCache, :apply_fun, 3,
+          [file: ~c"lib/logflare/context_cache.ex", line: 48]},
+         {LogflareWeb.Plugs.VerifyApiAccess, :identify_requestor, 2,
+          [
+            file: ~c"lib/logflare_web/controllers/plugs/verify_api_access.ex",
+            line: 83
+          ]},
+         {LogflareWeb.Plugs.VerifyApiAccess, :call, 2,
+          [
+            file: ~c"lib/logflare_web/controllers/plugs/verify_api_access.ex",
+            line: 35
+          ]},
+         {LogflareWeb.Router, :require_ingest_api_auth, ...}
+       ]
+     }}
+
+    (logflare 1.31.2) lib/logflare/context_cache.ex:48: Logflare.ContextCache.apply_fun/3
+    (logflare 1.31.2) lib/logflare_web/controllers/plugs/verify_api_access.ex:83: LogflareWeb.Plugs.VerifyApiAccess.identify_requestor/2
+    (logflare 1.31.2) lib/logflare_web/controllers/plugs/verify_api_access.ex:35: LogflareWeb.Plugs.VerifyApiAccess.call/2
+    (logflare 1.31.2) LogflareWeb.Router.require_ingest_api_auth/2
+    (logflare 1.31.2) lib/logflare_web/router.ex:1: LogflareWeb.Router.__pipe_through15__/1
+    (phoenix 1.7.21) lib/phoenix/router.ex:475: Phoenix.Router.__call__/5
+    (logflare 1.31.2) lib/logflare_web/endpoint.ex:1: LogflareWeb.Endpoint.plug_builder_call/2
+    (logflare 1.31.2) lib/logflare_web/endpoint.ex:1: LogflareWeb.Endpoint.call/2
+
+
+05:23:09.336 [error] ** (CaseClauseError) no case clause matching:
+
+    {:error,
+     %Cachex.Error{
+       message: "connection not available and request was dropped from queue after 10709ms. This means requests are coming in and your connection pool cannot serve them fast enough. You can address this by:\n\n  1. Ensuring your database is available and that you can connect to it\n  2. Tracking down slow queries and making sure they are running fast enough\n  3. Increasing the pool_size (although this increases resource consumption)\n  4. Allowing requests to wait longer by increasing :queue_target and :queue_interval\n\nSee DBConnection.start_link/2 for more information\n",
+       stack: [
+         {Ecto.Adapters.SQL, :raise_sql_call_error, 1,
+          [
+            file: ~c"lib/ecto/adapters/sql.ex",
+            line: 1098,
+            error_info: %{module: Exception}
+          ]},
+         {Ecto.Adapters.SQL, :execute, 6,
+          [file: ~c"lib/ecto/adapters/sql.ex", line: 996]},
+         {Ecto.Repo.Queryable, :execute, 4,
+          [file: ~c"lib/ecto/repo/queryable.ex", line: 241]},
+         {Ecto.Repo.Queryable, :all, 3,
+          [file: ~c"lib/ecto/repo/queryable.ex", line: 19]},
+         {Ecto.Repo.Queryable, :one, 3,
+          [file: ~c"lib/ecto/repo/queryable.ex", line: 163]},
+         {ExOauth2Provider, :load_access_token, 2,
+          [file: ~c"lib/ex_oauth2_provider.ex", line: 63]},
+         {ExOauth2Provider, :authenticate_token, 2,
+          [file: ~c"lib/ex_oauth2_provider.ex", line: 56]},
+         {Logflare.Auth, :verify_access_token_and_fetch_owner, 2,
+          [file: ~c"lib/logflare/auth.ex", line: 168]},
+         {Cachex.Services.Courier, :dispatch, 3,
+          [file: ~c"lib/cachex/services/courier.ex", line: 43]},
+         {Cachex.Router, :route_local, 3,
+          [file: ~c"lib/cachex/router.ex", line: 182]},
+         {Logflare.ContextCache, :apply_fun, 3,
+          [file: ~c"lib/logflare/context_cache.ex", line: 48]},
+         {LogflareWeb.Plugs.VerifyApiAccess, :identify_requestor, 2,
+          [
+            file: ~c"lib/logflare_web/controllers/plugs/verify_api_access.ex",
+            line: 83
+          ]},
+         {LogflareWeb.Plugs.VerifyApiAccess, :call, 2,
+          [
+            file: ~c"lib/logflare_web/controllers/plugs/verify_api_access.ex",
+            line: 35
+          ]},
+         {LogflareWeb.Router, :require_ingest_api_auth, ...}
+       ]
+     }}
+
+    (logflare 1.31.2) lib/logflare/context_cache.ex:48: Logflare.ContextCache.apply_fun/3
+    (logflare 1.31.2) lib/logflare_web/controllers/plugs/verify_api_access.ex:83: LogflareWeb.Plugs.VerifyApiAccess.identify_requestor/2
+    (logflare 1.31.2) lib/logflare_web/controllers/plugs/verify_api_access.ex:35: LogflareWeb.Plugs.VerifyApiAccess.call/2
+    (logflare 1.31.2) LogflareWeb.Router.require_ingest_api_auth/2
+    (logflare 1.31.2) lib/logflare_web/router.ex:1: LogflareWeb.Router.__pipe_through15__/1
+    (phoenix 1.7.21) lib/phoenix/router.ex:475: Phoenix.Router.__call__/5
+    (logflare 1.31.2) lib/logflare_web/endpoint.ex:1: LogflareWeb.Endpoint.plug_builder_call/2
+    (logflare 1.31.2) lib/logflare_web/endpoint.ex:1: LogflareWeb.Endpoint.call/2
+
+
+05:23:09.339 [warning] Going Down - :shutdown - Elixir.Logflare.Sources.Source.Supervisor - last state: 
+
+05:23:09.343 [warning] [Elixir.Logflare.Sources.Counters] terminating - shutdown 
+
+05:23:09.378 [notice] Application logflare exited: Logflare.Application.start(:normal, []) returned an error: shutdown: failed to start child: Logflare.SystemMetricsSup
+    ** (EXIT) shutdown: failed to start child: Logflare.SystemMetrics.AllLogsLogged
+        ** (EXIT) an exception was raised:
+            ** (DBConnection.ConnectionError) connection not available and request was dropped from queue after 11311ms. This means requests are coming in and your connection pool cannot serve them fast enough. You can address this by:
+
+  1. Ensuring your database is available and that you can connect to it
+  2. Tracking down slow queries and making sure they are running fast enough
+  3. Increasing the pool_size (although this increases resource consumption)
+  4. Allowing requests to wait longer by increasing :queue_target and :queue_interval
+
+See DBConnection.start_link/2 for more information
+
+                (ecto_sql 3.13.2) lib/ecto/adapters/sql.ex:1098: Ecto.Adapters.SQL.raise_sql_call_error/1
+                (ecto_sql 3.13.2) lib/ecto/adapters/sql.ex:996: Ecto.Adapters.SQL.execute/6
+                (ecto 3.13.5) lib/ecto/repo/queryable.ex:241: Ecto.Repo.Queryable.execute/4
+                (ecto 3.13.5) lib/ecto/repo/queryable.ex:19: Ecto.Repo.Queryable.all/3
+                (ecto 3.13.5) lib/ecto/repo/queryable.ex:163: Ecto.Repo.Queryable.one/3
+                (logflare 1.31.2) lib/logflare/system_metrics/all_logs_logged/all_logs_logged.ex:20: Logflare.SystemMetrics.AllLogsLogged.init/1
+                (stdlib 6.2.2.2) gen_server.erl:2229: :gen_server.init_it/2
+                (stdlib 6.2.2.2) gen_server.erl:2184: :gen_server.init_it/6
+{exit,terminating,[{application_controller,call,2,[{file,"application_controller.erl"},{line,511}]},{application,enqueue_or_start,6,[{file,"application.erl"},{line,380}]},{application,ensure_all_started,3,[{file,"application.erl"},{line,359}]},{elixir,start_cli,0,[{file,"src/elixir.erl"},{line,188}]},{init,start_it,1,[]},{init,start_em,1,[]},{init,do_boot,3,[]}]}
+Kernel pid terminated (application_controller) ("{application_start_failure,logflare,{{shutdown,{failed_to_start_child,'Elixir.Logflare.SystemMetricsSup',{shutdown,{failed_to_start_child,'Elixir.Logflare.SystemMetrics.AllLogsLogged',{#{message => <<\"connection not available and request was dropped from queue after 11311ms. This means requests are coming in and your connection pool cannot serve them fast enough. You can address this by:\n\n  1. Ensuring your database is available and that you can connect to it\n  2. Tracking down slow queries and making sure they are running fast enough\n  3. Increasing the pool_size (although this increases resource consumption)\n  4. Allowing requests to wait longer by increasing :queue_target and :queue_interval\n\nSee DBConnection.start_link/2 for more information\n\">>,reason => queue_timeout,'__struct__' => 'Elixir.DBConnection.ConnectionError','__exception__' => true,severity => error},[{'Elixir.Ecto.Adapters.SQL',raise_sql_call_error,1,[{file,\"lib/ecto/adapters/sql.
+
+Crash dump is being written to: erl_crash.dump...done
+LOGFLARE_NODE_HOST is: 127.0.0.1
+warning: the :backends key for the :logger application is deprecated.
+Here is how to proceed:
+
+1. If you want to set it to [:console], simply remove the option.
+
+2. If you want to disable logging, remove :backends and instead set:
+
+    config :logger, :default_handler, false
+
+3. If you want to configure any other backend, then it is recommended
+   to add `{:logger_backends, "~> 1.0"}` as a dependency and call
+   `LoggerBackends.add(CustomBackend)` in your application start callback
+
+  (logger 1.19.5) lib/logger/app.ex:20: Logger.App.start/2
+  (kernel 10.2.7.3) application_master.erl:295: :application_master.start_it_old/4
+
+
+05:23:17.486 [info] Starting migration
+
+05:23:18.896 [error] Postgrex.Protocol (#PID<0.151.0>) failed to connect: ** (Postgrex.Error) FATAL 3D000 (invalid_catalog_name) database "_supabase" does not exist
+
+05:23:18.896 [error] Postgrex.Protocol (#PID<0.150.0>) failed to connect: ** (Postgrex.Error) FATAL 3D000 (invalid_catalog_name) database "_supabase" does not exist
+
+05:23:21.071 [error] Postgrex.Protocol (#PID<0.150.0>) failed to connect: ** (Postgrex.Error) FATAL 3D000 (invalid_catalog_name) database "_supabase" does not exist
+
+05:23:21.748 [error] Postgrex.Protocol (#PID<0.151.0>) failed to connect: ** (Postgrex.Error) FATAL 3D000 (invalid_catalog_name) database "_supabase" does not exist
+
+05:23:25.922 [error] Postgrex.Protocol (#PID<0.150.0>) failed to connect: ** (Postgrex.Error) FATAL 3D000 (invalid_catalog_name) database "_supabase" does not exist
+
+05:23:29.783 [error] Postgrex.Protocol (#PID<0.151.0>) failed to connect: ** (Postgrex.Error) FATAL 3D000 (invalid_catalog_name) database "_supabase" does not exist
+
+05:23:30.516 [error] Could not create schema migrations table. This error usually happens due to the following:
+
+  * The database does not exist
+  * The "schema_migrations" table, which Ecto uses for managing
+    migrations, was defined by another library
+  * There is a deadlock while migrating (such as using concurrent
+    indexes with a migration_lock)
+
+To fix the first issue, run "mix ecto.create" for the desired MIX_ENV.
+
+To address the second, you can run "mix ecto.drop" followed by
+"mix ecto.create", both for the desired MIX_ENV. Alternatively you may
+configure Ecto to use another table and/or repository for managing
+migrations:
+
+    config :logflare, Logflare.Repo,
+      migration_source: "some_other_table_for_schema_migrations",
+      migration_repo: AnotherRepoForSchemaMigrations
+
+The full error report is shown below.
+
+** (DBConnection.ConnectionError) connection not available and request was dropped from queue after 11910ms. This means requests are coming in and your connection pool cannot serve them fast enough. You can address this by:
+
+  1. Ensuring your database is available and that you can connect to it
+  2. Tracking down slow queries and making sure they are running fast enough
+  3. Increasing the pool_size (although this increases resource consumption)
+  4. Allowing requests to wait longer by increasing :queue_target and :queue_interval
+
+See DBConnection.start_link/2 for more information
+
+    (ecto_sql 3.13.2) lib/ecto/adapters/sql.ex:1098: Ecto.Adapters.SQL.raise_sql_call_error/1
+    (elixir 1.19.5) lib/enum.ex:1688: Enum."-map/2-lists^map/1-1-"/2
+    (ecto_sql 3.13.2) lib/ecto/adapters/sql.ex:1219: Ecto.Adapters.SQL.execute_ddl/4
+    (ecto_sql 3.13.2) lib/ecto/migrator.ex:779: Ecto.Migrator.verbose_schema_migration/3
+    (ecto_sql 3.13.2) lib/ecto/migrator.ex:563: Ecto.Migrator.lock_for_migrations/4
+    (ecto_sql 3.13.2) lib/ecto/migrator.ex:432: Ecto.Migrator.run/4
+    (ecto_sql 3.13.2) lib/ecto/migrator.ex:170: Ecto.Migrator.with_repo/3
+    nofile:1: (file)
+warning: the :backends key for the :logger application is deprecated.
+Here is how to proceed:
+
+1. If you want to set it to [:console], simply remove the option.
+
+2. If you want to disable logging, remove :backends and instead set:
+
+    config :logger, :default_handler, false
+
+3. If you want to configure any other backend, then it is recommended
+   to add `{:logger_backends, "~> 1.0"}` as a dependency and call
+   `LoggerBackends.add(CustomBackend)` in your application start callback
+
+  (logger 1.19.5) lib/logger/app.ex:20: Logger.App.start/2
+  (kernel 10.2.7.3) application_master.erl:295: :application_master.start_it_old/4
+
+
+05:24:38.249 [error] The :mime library has been compiled with the following custom types:
+
+    %{}
+
+But it is being started with the following types:
+
+    %{"application/x-protobuf" => ["protobuf"]}
+
+We are going to dynamically recompile it during boot,
+but please clean the :mime dependency to make sure it is recompiled:
+
+    $ mix deps.clean mime --build
+
+warning: redefining module MIME (current version loaded from /opt/app/rel/logflare/lib/mime-1.6.0/ebin/Elixir.MIME.beam)
+└─ /app/deps/mime/lib/mime/application.ex:27: MIME (module)
+
+
+05:24:41.829 [notice]     :alarm_handler: {:set, {:system_memory_high_watermark, []}}
+
+05:24:44.456 [error] Postgrex.Protocol (#PID<0.6446.0>) failed to connect: ** (Postgrex.Error) FATAL 3D000 (invalid_catalog_name) database "_supabase" does not exist
+
+05:24:44.558 [error] Postgrex.Protocol (#PID<0.6441.0>) failed to connect: ** (Postgrex.Error) FATAL 3D000 (invalid_catalog_name) database "_supabase" does not exist
+
+05:24:44.559 [error] Postgrex.Protocol (#PID<0.6445.0>) failed to connect: ** (Postgrex.Error) FATAL 3D000 (invalid_catalog_name) database "_supabase" does not exist
+
+05:24:44.559 [error] Postgrex.Protocol (#PID<0.6444.0>) failed to connect: ** (Postgrex.Error) FATAL 3D000 (invalid_catalog_name) database "_supabase" does not exist
+
+05:24:44.559 [error] Postgrex.Protocol (#PID<0.6448.0>) failed to connect: ** (Postgrex.Error) FATAL 3D000 (invalid_catalog_name) database "_supabase" does not exist
+
+05:24:44.559 [error] Postgrex.Protocol (#PID<0.6440.0>) failed to connect: ** (Postgrex.Error) FATAL 3D000 (invalid_catalog_name) database "_supabase" does not exist
+
+05:24:44.559 [error] Postgrex.Protocol (#PID<0.6442.0>) failed to connect: ** (Postgrex.Error) FATAL 3D000 (invalid_catalog_name) database "_supabase" does not exist
+
+05:24:44.559 [error] Postgrex.Protocol (#PID<0.6443.0>) failed to connect: ** (Postgrex.Error) FATAL 3D000 (invalid_catalog_name) database "_supabase" does not exist
+
+05:24:44.559 [error] Postgrex.Protocol (#PID<0.6439.0>) failed to connect: ** (Postgrex.Error) FATAL 3D000 (invalid_catalog_name) database "_supabase" does not exist
+
+05:24:44.559 [error] Postgrex.Protocol (#PID<0.6447.0>) failed to connect: ** (Postgrex.Error) FATAL 3D000 (invalid_catalog_name) database "_supabase" does not exist
+
+05:24:45.692 [error] Postgrex.Protocol (#PID<0.6446.0>) failed to connect: ** (Postgrex.Error) FATAL 3D000 (invalid_catalog_name) database "_supabase" does not exist
+
+05:24:46.392 [error] Postgrex.Protocol (#PID<0.6440.0>) failed to connect: ** (Postgrex.Error) FATAL 3D000 (invalid_catalog_name) database "_supabase" does not exist
+
+05:24:46.419 [error] Postgrex.Protocol (#PID<0.6442.0>) failed to connect: ** (Postgrex.Error) FATAL 3D000 (invalid_catalog_name) database "_supabase" does not exist
+
+05:24:46.518 [error] Postgrex.Protocol (#PID<0.6444.0>) failed to connect: ** (Postgrex.Error) FATAL 3D000 (invalid_catalog_name) database "_supabase" does not exist
+
+05:24:46.537 [error] Postgrex.Protocol (#PID<0.6448.0>) failed to connect: ** (Postgrex.Error) FATAL 3D000 (invalid_catalog_name) database "_supabase" does not exist
+
+05:24:46.628 [error] Postgrex.Protocol (#PID<0.6443.0>) failed to connect: ** (Postgrex.Error) FATAL 3D000 (invalid_catalog_name) database "_supabase" does not exist
+
+05:24:46.686 [error] Postgrex.Protocol (#PID<0.6445.0>) failed to connect: ** (Postgrex.Error) FATAL 3D000 (invalid_catalog_name) database "_supabase" does not exist
+
+05:24:46.694 [error] Postgrex.Protocol (#PID<0.6447.0>) failed to connect: ** (Postgrex.Error) FATAL 3D000 (invalid_catalog_name) database "_supabase" does not exist
+
+05:24:46.798 [error] Postgrex.Protocol (#PID<0.6439.0>) failed to connect: ** (Postgrex.Error) FATAL 3D000 (invalid_catalog_name) database "_supabase" does not exist
+
+05:24:47.086 [error] Postgrex.Protocol (#PID<0.6446.0>) failed to connect: ** (Postgrex.Error) FATAL 3D000 (invalid_catalog_name) database "_supabase" does not exist
+
+05:24:47.589 [info] ClickHouse mapping configs compiled and cached
+
+05:24:47.633 [error] Postgrex.Protocol (#PID<0.6441.0>) failed to connect: ** (Postgrex.Error) FATAL 3D000 (invalid_catalog_name) database "_supabase" does not exist
+
+05:24:48.788 [error] Postgrex.Protocol (#PID<0.6443.0>) failed to connect: ** (Postgrex.Error) FATAL 3D000 (invalid_catalog_name) database "_supabase" does not exist
+
+05:24:49.022 [error] Postgrex.Protocol (#PID<0.6444.0>) failed to connect: ** (Postgrex.Error) FATAL 3D000 (invalid_catalog_name) database "_supabase" does not exist
+
+05:24:49.509 [error] Postgrex.Protocol (#PID<0.6442.0>) failed to connect: ** (Postgrex.Error) FATAL 3D000 (invalid_catalog_name) database "_supabase" does not exist
+
+05:24:49.969 [error] Postgrex.Protocol (#PID<0.6440.0>) failed to connect: ** (Postgrex.Error) FATAL 3D000 (invalid_catalog_name) database "_supabase" does not exist
+
+05:24:50.538 [error] Postgrex.Protocol (#PID<0.6448.0>) failed to connect: ** (Postgrex.Error) FATAL 3D000 (invalid_catalog_name) database "_supabase" does not exist
+
+05:24:50.662 [warning] Elixir.Logflare.ErlSysMon message: {:monitor, #PID<0.6804.0>, :long_message_queue, true} |
+ process info: ["$ancestors": [LogflareWeb.Endpoint, Logflare.Supervisor, #PID<0.6401.0>], "$initial_call": {:supervisor, ThousandIsland.Server, 1}]
+
+05:24:50.723 [warning] Elixir.Logflare.ErlSysMon message: {:monitor, #PID<0.6270.0>, :long_schedule, [timeout: 767, in: :undefined, out: :undefined]} |
+ process info: ["$ancestors": [:os_mon_sup, #PID<0.6267.0>], "$initial_call": {:memsup, :init, 1}]
+
+05:24:50.725 [warning] Elixir.Logflare.ErlSysMon message: {:monitor, #PID<0.6804.0>, :long_message_queue, false} |
+ process info: ["$ancestors": [LogflareWeb.Endpoint, Logflare.Supervisor, #PID<0.6401.0>], "$initial_call": {:supervisor, ThousandIsland.Server, 1}]
+
+05:24:50.804 [error] Postgrex.Protocol (#PID<0.6447.0>) failed to connect: ** (Postgrex.Error) FATAL 3D000 (invalid_catalog_name) database "_supabase" does not exist
+
+05:24:50.932 [error] ** (RuntimeError) could not find persistent term for endpoint LogflareWeb.Endpoint. Make sure your endpoint is started and note you cannot access endpoint functions at compile-time
+    (logflare 1.31.2) deps/phoenix/lib/phoenix/endpoint.ex:544: LogflareWeb.Endpoint.persistent!/0
+    (logflare 1.31.2) deps/phoenix/lib/phoenix/endpoint.ex:584: LogflareWeb.Endpoint.script_name/0
+    (logflare 1.31.2) lib/logflare_web/endpoint.ex:1: LogflareWeb.Endpoint.call/2
+    (bandit 1.9.0) lib/bandit/pipeline.ex:131: Bandit.Pipeline.call_plug!/2
+    (bandit 1.9.0) lib/bandit/pipeline.ex:42: Bandit.Pipeline.run/5
+    (bandit 1.9.0) lib/bandit/http1/handler.ex:13: Bandit.HTTP1.Handler.handle_data/3
+    (bandit 1.9.0) lib/bandit/delegating_handler.ex:18: Bandit.DelegatingHandler.handle_data/3
+    (bandit 1.9.0) lib/bandit/delegating_handler.ex:8: Bandit.DelegatingHandler.handle_continue/2
+
+
+05:24:50.970 [error] Postgrex.Protocol (#PID<0.6446.0>) failed to connect: ** (Postgrex.Error) FATAL 3D000 (invalid_catalog_name) database "_supabase" does not exist
+
+05:24:50.997 [error] Postgrex.Protocol (#PID<0.6443.0>) failed to connect: ** (Postgrex.Error) FATAL 3D000 (invalid_catalog_name) database "_supabase" does not exist
+
+05:24:51.041 [info] Running LogflareWeb.Endpoint with Bandit 1.9.0 at 0.0.0.0:4000 (http)
+
+05:24:51.059 [error] ** (RuntimeError) could not find persistent term for endpoint LogflareWeb.Endpoint. Make sure your endpoint is started and note you cannot access endpoint functions at compile-time
+    (logflare 1.31.2) deps/phoenix/lib/phoenix/endpoint.ex:544: LogflareWeb.Endpoint.persistent!/0
+    (logflare 1.31.2) deps/phoenix/lib/phoenix/endpoint.ex:584: LogflareWeb.Endpoint.script_name/0
+    (logflare 1.31.2) lib/logflare_web/endpoint.ex:1: LogflareWeb.Endpoint.call/2
+    (bandit 1.9.0) lib/bandit/pipeline.ex:131: Bandit.Pipeline.call_plug!/2
+    (bandit 1.9.0) lib/bandit/pipeline.ex:42: Bandit.Pipeline.run/5
+    (bandit 1.9.0) lib/bandit/http1/handler.ex:13: Bandit.HTTP1.Handler.handle_data/3
+    (bandit 1.9.0) lib/bandit/delegating_handler.ex:18: Bandit.DelegatingHandler.handle_data/3
+    (bandit 1.9.0) lib/bandit/delegating_handler.ex:8: Bandit.DelegatingHandler.handle_continue/2
+
+
+05:24:51.103 [info] Access LogflareWeb.Endpoint at http://localhost:4000
+
+05:24:51.712 [error] Postgrex.Protocol (#PID<0.6439.0>) failed to connect: ** (Postgrex.Error) FATAL 3D000 (invalid_catalog_name) database "_supabase" does not exist
+
+05:24:51.990 [error] Postgrex.Protocol (#PID<0.6445.0>) failed to connect: ** (Postgrex.Error) FATAL 3D000 (invalid_catalog_name) database "_supabase" does not exist
+
+05:24:52.664 [error] Postgrex.Protocol (#PID<0.6444.0>) failed to connect: ** (Postgrex.Error) FATAL 3D000 (invalid_catalog_name) database "_supabase" does not exist
+
+05:24:53.891 [error] Postgrex.Protocol (#PID<0.6441.0>) failed to connect: ** (Postgrex.Error) FATAL 3D000 (invalid_catalog_name) database "_supabase" does not exist
+
+05:24:55.097 [error] Postgrex.Protocol (#PID<0.6443.0>) failed to connect: ** (Postgrex.Error) FATAL 3D000 (invalid_catalog_name) database "_supabase" does not exist
+
+05:24:55.209 [warning] GenSingleton unknown case | failed to start child: {:error, {{:error, :fatal, "3D000", :invalid_catalog_name, "database \"_supabase\" does not exist", [file: "postinit.c", line: "945", routine: "InitPostgres", severity: "FATAL"]}, {:child, :undefined, Cainophile.Adapters.Postgres, {Cainophile.Adapters.Postgres, :start_link, [[register: {:via, :syn, {:core, Logflare.PgPublisher}}, epgsql: %{port: 5432, host: ~c"db", password: "your-super-secret-and-long-postgres-password", username: "supabase_admin", tcp_opts: [], database: "_supabase"}, slot: :temporary, wal_position: {"0", "0"}, publications: ["logflare_pub"]]]}, :permanent, false, 5000, :worker, [Cainophile.Adapters.Postgres]}}}
+
+05:24:56.012 [error] GenServer Logflare.Backends.CacheWarmer terminating
+** (DBConnection.ConnectionError) connection not available and request was dropped from queue after 11136ms. This means requests are coming in and your connection pool cannot serve them fast enough. You can address this by:
+
+  1. Ensuring your database is available and that you can connect to it
+  2. Tracking down slow queries and making sure they are running fast enough
+  3. Increasing the pool_size (although this increases resource consumption)
+  4. Allowing requests to wait longer by increasing :queue_target and :queue_interval
+
+See DBConnection.start_link/2 for more information
+
+    (ecto_sql 3.13.2) lib/ecto/adapters/sql.ex:1098: Ecto.Adapters.SQL.raise_sql_call_error/1
+    (ecto_sql 3.13.2) lib/ecto/adapters/sql.ex:996: Ecto.Adapters.SQL.execute/6
+    (ecto 3.13.5) lib/ecto/repo/queryable.ex:241: Ecto.Repo.Queryable.execute/4
+    (ecto 3.13.5) lib/ecto/repo/queryable.ex:19: Ecto.Repo.Queryable.all/3
+    (logflare 1.31.2) lib/logflare/backends.ex:103: Logflare.Backends.list_backends/1
+    (logflare 1.31.2) lib/logflare/backends/cache_warmer.ex:7: Logflare.Backends.CacheWarmer.execute/1
+    (logflare 1.31.2) deps/cachex/lib/cachex/provision.ex:101: Logflare.Backends.CacheWarmer.handle_info/2
+    (stdlib 6.2.2.2) gen_server.erl:2345: :gen_server.try_handle_info/3
+Last message: {:cachex_warmer, [#PID<0.6569.0>]}
+
+05:24:56.012 [error] GenServer Logflare.Sources.CacheWarmer terminating
+** (DBConnection.ConnectionError) connection not available and request was dropped from queue after 11094ms. This means requests are coming in and your connection pool cannot serve them fast enough. You can address this by:
+
+  1. Ensuring your database is available and that you can connect to it
+  2. Tracking down slow queries and making sure they are running fast enough
+  3. Increasing the pool_size (although this increases resource consumption)
+  4. Allowing requests to wait longer by increasing :queue_target and :queue_interval
+
+See DBConnection.start_link/2 for more information
+
+    (ecto_sql 3.13.2) lib/ecto/adapters/sql.ex:1098: Ecto.Adapters.SQL.raise_sql_call_error/1
+    (ecto_sql 3.13.2) lib/ecto/adapters/sql.ex:996: Ecto.Adapters.SQL.execute/6
+    (ecto 3.13.5) lib/ecto/repo/queryable.ex:241: Ecto.Repo.Queryable.execute/4
+    (ecto 3.13.5) lib/ecto/repo/queryable.ex:19: Ecto.Repo.Queryable.all/3
+    (logflare 1.31.2) lib/logflare/sources/cache_warmer.ex:16: Logflare.Sources.CacheWarmer.execute/1
+    (logflare 1.31.2) deps/cachex/lib/cachex/provision.ex:101: Logflare.Sources.CacheWarmer.handle_info/2
+    (stdlib 6.2.2.2) gen_server.erl:2345: :gen_server.try_handle_info/3
+    (stdlib 6.2.2.2) gen_server.erl:2433: :gen_server.handle_msg/6
+Last message: {:cachex_warmer, [#PID<0.6569.0>]}
+
+05:24:56.011 [error] GenServer Logflare.Users.CacheWarmer terminating
+** (DBConnection.ConnectionError) connection not available and request was dropped from queue after 11219ms. This means requests are coming in and your connection pool cannot serve them fast enough. You can address this by:
+
+  1. Ensuring your database is available and that you can connect to it
+  2. Tracking down slow queries and making sure they are running fast enough
+  3. Increasing the pool_size (although this increases resource consumption)
+  4. Allowing requests to wait longer by increasing :queue_target and :queue_interval
+
+See DBConnection.start_link/2 for more information
+
+    (ecto_sql 3.13.2) lib/ecto/adapters/sql.ex:1098: Ecto.Adapters.SQL.raise_sql_call_error/1
+    (ecto_sql 3.13.2) lib/ecto/adapters/sql.ex:996: Ecto.Adapters.SQL.execute/6
+    (ecto 3.13.5) lib/ecto/repo/queryable.ex:241: Ecto.Repo.Queryable.execute/4
+    (ecto 3.13.5) lib/ecto/repo/queryable.ex:19: Ecto.Repo.Queryable.all/3
+    (logflare 1.31.2) lib/logflare/users/cache_warmer.ex:7: Logflare.Users.CacheWarmer.execute/1
+    (logflare 1.31.2) deps/cachex/lib/cachex/provision.ex:101: Logflare.Users.CacheWarmer.handle_info/2
+    (stdlib 6.2.2.2) gen_server.erl:2345: :gen_server.try_handle_info/3
+    (stdlib 6.2.2.2) gen_server.erl:2433: :gen_server.handle_msg/6
+Last message: {:cachex_warmer, [#PID<0.6569.0>]}
+
+05:24:56.011 [error] GenServer Logflare.SourceSchemas.CacheWarmer terminating
+** (DBConnection.ConnectionError) connection not available and request was dropped from queue after 10835ms. This means requests are coming in and your connection pool cannot serve them fast enough. You can address this by:
+
+  1. Ensuring your database is available and that you can connect to it
+  2. Tracking down slow queries and making sure they are running fast enough
+  3. Increasing the pool_size (although this increases resource consumption)
+  4. Allowing requests to wait longer by increasing :queue_target and :queue_interval
+
+See DBConnection.start_link/2 for more information
+
+    (ecto_sql 3.13.2) lib/ecto/adapters/sql.ex:1098: Ecto.Adapters.SQL.raise_sql_call_error/1
+    (ecto_sql 3.13.2) lib/ecto/adapters/sql.ex:996: Ecto.Adapters.SQL.execute/6
+    (ecto 3.13.5) lib/ecto/repo/queryable.ex:241: Ecto.Repo.Queryable.execute/4
+    (ecto 3.13.5) lib/ecto/repo/queryable.ex:19: Ecto.Repo.Queryable.all/3
+    (logflare 1.31.2) lib/logflare/source_schemas/cache_warmer.ex:19: Logflare.SourceSchemas.CacheWarmer.execute/1
+    (logflare 1.31.2) deps/cachex/lib/cachex/provision.ex:101: Logflare.SourceSchemas.CacheWarmer.handle_info/2
+    (stdlib 6.2.2.2) gen_server.erl:2345: :gen_server.try_handle_info/3
+    (stdlib 6.2.2.2) gen_server.erl:2433: :gen_server.handle_msg/6
+Last message: {:cachex_warmer, [#PID<0.6569.0>]}
+
+05:24:56.131 [error] Postgrex.Protocol (#PID<0.6440.0>) failed to connect: ** (Postgrex.Error) FATAL 3D000 (invalid_catalog_name) database "_supabase" does not exist
+
+05:24:56.438 [error] Postgrex.Protocol (#PID<0.6446.0>) failed to connect: ** (Postgrex.Error) FATAL 3D000 (invalid_catalog_name) database "_supabase" does not exist
+
+05:24:56.522 [error] Postgrex.Protocol (#PID<0.6447.0>) failed to connect: ** (Postgrex.Error) FATAL 3D000 (invalid_catalog_name) database "_supabase" does not exist
+
+05:24:56.841 [error] Postgrex.Protocol (#PID<0.6442.0>) failed to connect: ** (Postgrex.Error) FATAL 3D000 (invalid_catalog_name) database "_supabase" does not exist
+
+05:24:57.493 [error] Postgrex.Protocol (#PID<0.6448.0>) failed to connect: ** (Postgrex.Error) FATAL 3D000 (invalid_catalog_name) database "_supabase" does not exist
+
+05:24:59.699 [error] Postgrex.Protocol (#PID<0.6443.0>) failed to connect: ** (Postgrex.Error) FATAL 3D000 (invalid_catalog_name) database "_supabase" does not exist
+
+05:25:00.007 [error] GenServer Logflare.Rules.CacheWarmer terminating
+** (DBConnection.ConnectionError) connection not available and request was dropped from queue after 13827ms. This means requests are coming in and your connection pool cannot serve them fast enough. You can address this by:
+
+  1. Ensuring your database is available and that you can connect to it
+  2. Tracking down slow queries and making sure they are running fast enough
+  3. Increasing the pool_size (although this increases resource consumption)
+  4. Allowing requests to wait longer by increasing :queue_target and :queue_interval
+
+See DBConnection.start_link/2 for more information
+
+    (ecto_sql 3.13.2) lib/ecto/adapters/sql.ex:1098: Ecto.Adapters.SQL.raise_sql_call_error/1
+    (ecto_sql 3.13.2) lib/ecto/adapters/sql.ex:996: Ecto.Adapters.SQL.execute/6
+    (ecto 3.13.5) lib/ecto/repo/queryable.ex:241: Ecto.Repo.Queryable.execute/4
+    (ecto 3.13.5) lib/ecto/repo/queryable.ex:19: Ecto.Repo.Queryable.all/3
+    (logflare 1.31.2) lib/logflare/rules/cache_warmer.ex:18: Logflare.Rules.CacheWarmer.execute/1
+    (logflare 1.31.2) deps/cachex/lib/cachex/provision.ex:101: Logflare.Rules.CacheWarmer.handle_info/2
+    (stdlib 6.2.2.2) gen_server.erl:2345: :gen_server.try_handle_info/3
+    (stdlib 6.2.2.2) gen_server.erl:2433: :gen_server.handle_msg/6
+Last message: {:cachex_warmer, [#PID<0.6569.0>]}
+
+05:25:00.619 [error] Postgrex.Protocol (#PID<0.6439.0>) failed to connect: ** (Postgrex.Error) FATAL 3D000 (invalid_catalog_name) database "_supabase" does not exist
+
+05:25:02.456 [error] Postgrex.Protocol (#PID<0.6446.0>) failed to connect: ** (Postgrex.Error) FATAL 3D000 (invalid_catalog_name) database "_supabase" does not exist
+
+05:25:02.644 [error] Postgrex.Protocol (#PID<0.6444.0>) failed to connect: ** (Postgrex.Error) FATAL 3D000 (invalid_catalog_name) database "_supabase" does not exist
+
+05:25:04.016 [error] ** (CaseClauseError) no case clause matching:
+
+    {:error,
+     %Cachex.Error{
+       message: "connection not available and request was dropped from queue after 12563ms. This means requests are coming in and your connection pool cannot serve them fast enough. You can address this by:\n\n  1. Ensuring your database is available and that you can connect to it\n  2. Tracking down slow queries and making sure they are running fast enough\n  3. Increasing the pool_size (although this increases resource consumption)\n  4. Allowing requests to wait longer by increasing :queue_target and :queue_interval\n\nSee DBConnection.start_link/2 for more information\n",
+       stack: [
+         {Ecto.Adapters.SQL, :raise_sql_call_error, 1,
+          [
+            file: ~c"lib/ecto/adapters/sql.ex",
+            line: 1098,
+            error_info: %{module: Exception}
+          ]},
+         {Ecto.Adapters.SQL, :execute, 6,
+          [file: ~c"lib/ecto/adapters/sql.ex", line: 996]},
+         {Ecto.Repo.Queryable, :execute, 4,
+          [file: ~c"lib/ecto/repo/queryable.ex", line: 241]},
+         {Ecto.Repo.Queryable, :all, 3,
+          [file: ~c"lib/ecto/repo/queryable.ex", line: 19]},
+         {Ecto.Repo.Queryable, :one, 3,
+          [file: ~c"lib/ecto/repo/queryable.ex", line: 163]},
+         {ExOauth2Provider, :load_access_token, 2,
+          [file: ~c"lib/ex_oauth2_provider.ex", line: 63]},
+         {ExOauth2Provider, :authenticate_token, 2,
+          [file: ~c"lib/ex_oauth2_provider.ex", line: 56]},
+         {Logflare.Auth, :verify_access_token_and_fetch_owner, 2,
+          [file: ~c"lib/logflare/auth.ex", line: 168]},
+         {Cachex.Services.Courier, :dispatch, 3,
+          [file: ~c"lib/cachex/services/courier.ex", line: 43]},
+         {Cachex.Router, :route_local, 3,
+          [file: ~c"lib/cachex/router.ex", line: 182]},
+         {Logflare.ContextCache, :apply_fun, 3,
+          [file: ~c"lib/logflare/context_cache.ex", line: 48]},
+         {LogflareWeb.Plugs.VerifyApiAccess, :identify_requestor, 2,
+          [
+            file: ~c"lib/logflare_web/controllers/plugs/verify_api_access.ex",
+            line: 83
+          ]},
+         {LogflareWeb.Plugs.VerifyApiAccess, :call, 2,
+          [
+            file: ~c"lib/logflare_web/controllers/plugs/verify_api_access.ex",
+            line: 35
+          ]},
+         {LogflareWeb.Router, :require_ingest_api_auth, ...}
+       ]
+     }}
+
+    (logflare 1.31.2) lib/logflare/context_cache.ex:48: Logflare.ContextCache.apply_fun/3
+    (logflare 1.31.2) lib/logflare_web/controllers/plugs/verify_api_access.ex:83: LogflareWeb.Plugs.VerifyApiAccess.identify_requestor/2
+    (logflare 1.31.2) lib/logflare_web/controllers/plugs/verify_api_access.ex:35: LogflareWeb.Plugs.VerifyApiAccess.call/2
+    (logflare 1.31.2) LogflareWeb.Router.require_ingest_api_auth/2
+    (logflare 1.31.2) lib/logflare_web/router.ex:1: LogflareWeb.Router.__pipe_through15__/1
+    (phoenix 1.7.21) lib/phoenix/router.ex:475: Phoenix.Router.__call__/5
+    (logflare 1.31.2) lib/logflare_web/endpoint.ex:1: LogflareWeb.Endpoint.plug_builder_call/2
+    (logflare 1.31.2) lib/logflare_web/endpoint.ex:1: LogflareWeb.Endpoint.call/2
+
+
+05:25:04.032 [error] ** (CaseClauseError) no case clause matching:
+
+    {:error,
+     %Cachex.Error{
+       message: "connection not available and request was dropped from queue after 12563ms. This means requests are coming in and your connection pool cannot serve them fast enough. You can address this by:\n\n  1. Ensuring your database is available and that you can connect to it\n  2. Tracking down slow queries and making sure they are running fast enough\n  3. Increasing the pool_size (although this increases resource consumption)\n  4. Allowing requests to wait longer by increasing :queue_target and :queue_interval\n\nSee DBConnection.start_link/2 for more information\n",
+       stack: [
+         {Ecto.Adapters.SQL, :raise_sql_call_error, 1,
+          [
+            file: ~c"lib/ecto/adapters/sql.ex",
+            line: 1098,
+            error_info: %{module: Exception}
+          ]},
+         {Ecto.Adapters.SQL, :execute, 6,
+          [file: ~c"lib/ecto/adapters/sql.ex", line: 996]},
+         {Ecto.Repo.Queryable, :execute, 4,
+          [file: ~c"lib/ecto/repo/queryable.ex", line: 241]},
+         {Ecto.Repo.Queryable, :all, 3,
+          [file: ~c"lib/ecto/repo/queryable.ex", line: 19]},
+         {Ecto.Repo.Queryable, :one, 3,
+          [file: ~c"lib/ecto/repo/queryable.ex", line: 163]},
+         {ExOauth2Provider, :load_access_token, 2,
+          [file: ~c"lib/ex_oauth2_provider.ex", line: 63]},
+         {ExOauth2Provider, :authenticate_token, 2,
+          [file: ~c"lib/ex_oauth2_provider.ex", line: 56]},
+         {Logflare.Auth, :verify_access_token_and_fetch_owner, 2,
+          [file: ~c"lib/logflare/auth.ex", line: 168]},
+         {Cachex.Services.Courier, :dispatch, 3,
+          [file: ~c"lib/cachex/services/courier.ex", line: 43]},
+         {Cachex.Router, :route_local, 3,
+          [file: ~c"lib/cachex/router.ex", line: 182]},
+         {Logflare.ContextCache, :apply_fun, 3,
+          [file: ~c"lib/logflare/context_cache.ex", line: 48]},
+         {LogflareWeb.Plugs.VerifyApiAccess, :identify_requestor, 2,
+          [
+            file: ~c"lib/logflare_web/controllers/plugs/verify_api_access.ex",
+            line: 83
+          ]},
+         {LogflareWeb.Plugs.VerifyApiAccess, :call, 2,
+          [
+            file: ~c"lib/logflare_web/controllers/plugs/verify_api_access.ex",
+            line: 35
+          ]},
+         {LogflareWeb.Router, :require_ingest_api_auth, ...}
+       ]
+     }}
+
+    (logflare 1.31.2) lib/logflare/context_cache.ex:48: Logflare.ContextCache.apply_fun/3
+    (logflare 1.31.2) lib/logflare_web/controllers/plugs/verify_api_access.ex:83: LogflareWeb.Plugs.VerifyApiAccess.identify_requestor/2
+    (logflare 1.31.2) lib/logflare_web/controllers/plugs/verify_api_access.ex:35: LogflareWeb.Plugs.VerifyApiAccess.call/2
+    (logflare 1.31.2) LogflareWeb.Router.require_ingest_api_auth/2
+    (logflare 1.31.2) lib/logflare_web/router.ex:1: LogflareWeb.Router.__pipe_through15__/1
+    (phoenix 1.7.21) lib/phoenix/router.ex:475: Phoenix.Router.__call__/5
+    (logflare 1.31.2) lib/logflare_web/endpoint.ex:1: LogflareWeb.Endpoint.plug_builder_call/2
+    (logflare 1.31.2) lib/logflare_web/endpoint.ex:1: LogflareWeb.Endpoint.call/2
+
+
+05:25:04.036 [error] ** (CaseClauseError) no case clause matching:
+
+    {:error,
+     %Cachex.Error{
+       message: "connection not available and request was dropped from queue after 12563ms. This means requests are coming in and your connection pool cannot serve them fast enough. You can address this by:\n\n  1. Ensuring your database is available and that you can connect to it\n  2. Tracking down slow queries and making sure they are running fast enough\n  3. Increasing the pool_size (although this increases resource consumption)\n  4. Allowing requests to wait longer by increasing :queue_target and :queue_interval\n\nSee DBConnection.start_link/2 for more information\n",
+       stack: [
+         {Ecto.Adapters.SQL, :raise_sql_call_error, 1,
+          [
+            file: ~c"lib/ecto/adapters/sql.ex",
+            line: 1098,
+            error_info: %{module: Exception}
+          ]},
+         {Ecto.Adapters.SQL, :execute, 6,
+          [file: ~c"lib/ecto/adapters/sql.ex", line: 996]},
+         {Ecto.Repo.Queryable, :execute, 4,
+          [file: ~c"lib/ecto/repo/queryable.ex", line: 241]},
+         {Ecto.Repo.Queryable, :all, 3,
+          [file: ~c"lib/ecto/repo/queryable.ex", line: 19]},
+         {Ecto.Repo.Queryable, :one, 3,
+          [file: ~c"lib/ecto/repo/queryable.ex", line: 163]},
+         {ExOauth2Provider, :load_access_token, 2,
+          [file: ~c"lib/ex_oauth2_provider.ex", line: 63]},
+         {ExOauth2Provider, :authenticate_token, 2,
+          [file: ~c"lib/ex_oauth2_provider.ex", line: 56]},
+         {Logflare.Auth, :verify_access_token_and_fetch_owner, 2,
+          [file: ~c"lib/logflare/auth.ex", line: 168]},
+         {Cachex.Services.Courier, :dispatch, 3,
+          [file: ~c"lib/cachex/services/courier.ex", line: 43]},
+         {Cachex.Router, :route_local, 3,
+          [file: ~c"lib/cachex/router.ex", line: 182]},
+         {Logflare.ContextCache, :apply_fun, 3,
+          [file: ~c"lib/logflare/context_cache.ex", line: 48]},
+         {LogflareWeb.Plugs.VerifyApiAccess, :identify_requestor, 2,
+          [
+            file: ~c"lib/logflare_web/controllers/plugs/verify_api_access.ex",
+            line: 83
+          ]},
+         {LogflareWeb.Plugs.VerifyApiAccess, :call, 2,
+          [
+            file: ~c"lib/logflare_web/controllers/plugs/verify_api_access.ex",
+            line: 35
+          ]},
+         {LogflareWeb.Router, :require_ingest_api_auth, ...}
+       ]
+     }}
+
+    (logflare 1.31.2) lib/logflare/context_cache.ex:48: Logflare.ContextCache.apply_fun/3
+    (logflare 1.31.2) lib/logflare_web/controllers/plugs/verify_api_access.ex:83: LogflareWeb.Plugs.VerifyApiAccess.identify_requestor/2
+    (logflare 1.31.2) lib/logflare_web/controllers/plugs/verify_api_access.ex:35: LogflareWeb.Plugs.VerifyApiAccess.call/2
+    (logflare 1.31.2) LogflareWeb.Router.require_ingest_api_auth/2
+    (logflare 1.31.2) lib/logflare_web/router.ex:1: LogflareWeb.Router.__pipe_through15__/1
+    (phoenix 1.7.21) lib/phoenix/router.ex:475: Phoenix.Router.__call__/5
+    (logflare 1.31.2) lib/logflare_web/endpoint.ex:1: LogflareWeb.Endpoint.plug_builder_call/2
+    (logflare 1.31.2) lib/logflare_web/endpoint.ex:1: LogflareWeb.Endpoint.call/2
+
+
+05:25:04.043 [error] ** (CaseClauseError) no case clause matching:
+
+    {:error,
+     %Cachex.Error{
+       message: "connection not available and request was dropped from queue after 12563ms. This means requests are coming in and your connection pool cannot serve them fast enough. You can address this by:\n\n  1. Ensuring your database is available and that you can connect to it\n  2. Tracking down slow queries and making sure they are running fast enough\n  3. Increasing the pool_size (although this increases resource consumption)\n  4. Allowing requests to wait longer by increasing :queue_target and :queue_interval\n\nSee DBConnection.start_link/2 for more information\n",
+       stack: [
+         {Ecto.Adapters.SQL, :raise_sql_call_error, 1,
+          [
+            file: ~c"lib/ecto/adapters/sql.ex",
+            line: 1098,
+            error_info: %{module: Exception}
+          ]},
+         {Ecto.Adapters.SQL, :execute, 6,
+          [file: ~c"lib/ecto/adapters/sql.ex", line: 996]},
+         {Ecto.Repo.Queryable, :execute, 4,
+          [file: ~c"lib/ecto/repo/queryable.ex", line: 241]},
+         {Ecto.Repo.Queryable, :all, 3,
+          [file: ~c"lib/ecto/repo/queryable.ex", line: 19]},
+         {Ecto.Repo.Queryable, :one, 3,
+          [file: ~c"lib/ecto/repo/queryable.ex", line: 163]},
+         {ExOauth2Provider, :load_access_token, 2,
+          [file: ~c"lib/ex_oauth2_provider.ex", line: 63]},
+         {ExOauth2Provider, :authenticate_token, 2,
+          [file: ~c"lib/ex_oauth2_provider.ex", line: 56]},
+         {Logflare.Auth, :verify_access_token_and_fetch_owner, 2,
+          [file: ~c"lib/logflare/auth.ex", line: 168]},
+         {Cachex.Services.Courier, :dispatch, 3,
+          [file: ~c"lib/cachex/services/courier.ex", line: 43]},
+         {Cachex.Router, :route_local, 3,
+          [file: ~c"lib/cachex/router.ex", line: 182]},
+         {Logflare.ContextCache, :apply_fun, 3,
+          [file: ~c"lib/logflare/context_cache.ex", line: 48]},
+         {LogflareWeb.Plugs.VerifyApiAccess, :identify_requestor, 2,
+          [
+            file: ~c"lib/logflare_web/controllers/plugs/verify_api_access.ex",
+            line: 83
+          ]},
+         {LogflareWeb.Plugs.VerifyApiAccess, :call, 2,
+          [
+            file: ~c"lib/logflare_web/controllers/plugs/verify_api_access.ex",
+            line: 35
+          ]},
+         {LogflareWeb.Router, :require_ingest_api_auth, ...}
+       ]
+     }}
+
+    (logflare 1.31.2) lib/logflare/context_cache.ex:48: Logflare.ContextCache.apply_fun/3
+    (logflare 1.31.2) lib/logflare_web/controllers/plugs/verify_api_access.ex:83: LogflareWeb.Plugs.VerifyApiAccess.identify_requestor/2
+    (logflare 1.31.2) lib/logflare_web/controllers/plugs/verify_api_access.ex:35: LogflareWeb.Plugs.VerifyApiAccess.call/2
+    (logflare 1.31.2) LogflareWeb.Router.require_ingest_api_auth/2
+    (logflare 1.31.2) lib/logflare_web/router.ex:1: LogflareWeb.Router.__pipe_through15__/1
+    (phoenix 1.7.21) lib/phoenix/router.ex:475: Phoenix.Router.__call__/5
+    (logflare 1.31.2) lib/logflare_web/endpoint.ex:1: LogflareWeb.Endpoint.plug_builder_call/2
+    (logflare 1.31.2) lib/logflare_web/endpoint.ex:1: LogflareWeb.Endpoint.call/2
+
+
+05:25:04.072 [error] Postgrex.Protocol (#PID<0.6445.0>) failed to connect: ** (Postgrex.Error) FATAL 3D000 (invalid_catalog_name) database "_supabase" does not exist
+
+05:25:04.099 [error] ** (Protocol.UndefinedError) protocol String.Chars not implemented for DBConnection.ConnectionError (a struct). This protocol is implemented for: Atom, BitString, Ch.Query, ConfigCat.User, Date, DateTime, Decimal, Explorer.Duration, Float, Integer, List, Money, NaiveDateTime, OpenApiSpex.Cast.Error, Phoenix.LiveComponent.CID, Postgrex.Copy, Postgrex.Query, Tesla.Client, Tesla.Env, Time, URI, Version, Version.Requirement
+
+Got value:
+
+    %DBConnection.ConnectionError{
+      message: "connection not available and request was dropped from queue after 11544ms. This means requests are coming in and your connection pool cannot serve them fast enough. You can address this by:\n\n  1. Ensuring your database is available and that you can connect to it\n  2. Tracking down slow queries and making sure they are running fast enough\n  3. Increasing the pool_size (although this increases resource consumption)\n  4. Allowing requests to wait longer by increasing :queue_target and :queue_interval\n\nSee DBConnection.start_link/2 for more information\n",
+      severity: :error,
+      reason: :queue_timeout
+    }
+
+    (elixir 1.19.5) lib/string/chars.ex:7: String.Chars.impl_for!/1
+    (elixir 1.19.5) lib/string/chars.ex:26: String.Chars.to_string/1
+    (logflare 1.31.2) lib/logflare/repo.ex:28: Logflare.Repo.get_uptime/0
+    (logflare 1.31.2) lib/logflare_web/controllers/health_check_controller.ex:11: LogflareWeb.HealthCheckController.check/2
+    (logflare 1.31.2) lib/logflare_web/controllers/health_check_controller.ex:1: LogflareWeb.HealthCheckController.action/2
+    (logflare 1.31.2) lib/logflare_web/controllers/health_check_controller.ex:1: LogflareWeb.HealthCheckController.phoenix_controller_pipeline/2
+    (phoenix 1.7.21) lib/phoenix/router.ex:484: Phoenix.Router.__call__/5
+    (logflare 1.31.2) lib/logflare_web/endpoint.ex:1: LogflareWeb.Endpoint.plug_builder_call/2
+
+
+05:25:08.445 [error] Postgrex.Protocol (#PID<0.6448.0>) failed to connect: ** (Postgrex.Error) FATAL 3D000 (invalid_catalog_name) database "_supabase" does not exist
+
+05:25:08.706 [error] Postgrex.Protocol (#PID<0.6442.0>) failed to connect: ** (Postgrex.Error) FATAL 3D000 (invalid_catalog_name) database "_supabase" does not exist
+
+05:25:09.579 [error] Postgrex.Protocol (#PID<0.6441.0>) failed to connect: ** (Postgrex.Error) FATAL 3D000 (invalid_catalog_name) database "_supabase" does not exist
+
+05:25:10.374 [error] Postgrex.Protocol (#PID<0.6447.0>) failed to connect: ** (Postgrex.Error) FATAL 3D000 (invalid_catalog_name) database "_supabase" does not exist
+
+05:25:10.706 [error] Postgrex.Protocol (#PID<0.6443.0>) failed to connect: ** (Postgrex.Error) FATAL 3D000 (invalid_catalog_name) database "_supabase" does not exist
+
+05:25:10.935 [error] Postgrex.Protocol (#PID<0.6440.0>) failed to connect: ** (Postgrex.Error) FATAL 3D000 (invalid_catalog_name) database "_supabase" does not exist
+
+05:25:11.933 [error] ** (Protocol.UndefinedError) protocol String.Chars not implemented for DBConnection.ConnectionError (a struct). This protocol is implemented for: Atom, BitString, Ch.Query, ConfigCat.User, Date, DateTime, Decimal, Explorer.Duration, Float, Integer, List, Money, NaiveDateTime, OpenApiSpex.Cast.Error, Phoenix.LiveComponent.CID, Postgrex.Copy, Postgrex.Query, Tesla.Client, Tesla.Env, Time, URI, Version, Version.Requirement
+
+Got value:
+
+    %DBConnection.ConnectionError{
+      message: "connection not available and request was dropped from queue after 11368ms. This means requests are coming in and your connection pool cannot serve them fast enough. You can address this by:\n\n  1. Ensuring your database is available and that you can connect to it\n  2. Tracking down slow queries and making sure they are running fast enough\n  3. Increasing the pool_size (although this increases resource consumption)\n  4. Allowing requests to wait longer by increasing :queue_target and :queue_interval\n\nSee DBConnection.start_link/2 for more information\n",
+      severity: :error,
+      reason: :queue_timeout
+    }
+
+    (elixir 1.19.5) lib/string/chars.ex:7: String.Chars.impl_for!/1
+    (elixir 1.19.5) lib/string/chars.ex:26: String.Chars.to_string/1
+    (logflare 1.31.2) lib/logflare/repo.ex:28: Logflare.Repo.get_uptime/0
+    (logflare 1.31.2) lib/logflare_web/controllers/health_check_controller.ex:11: LogflareWeb.HealthCheckController.check/2
+    (logflare 1.31.2) lib/logflare_web/controllers/health_check_controller.ex:1: LogflareWeb.HealthCheckController.action/2
+    (logflare 1.31.2) lib/logflare_web/controllers/health_check_controller.ex:1: LogflareWeb.HealthCheckController.phoenix_controller_pipeline/2
+    (phoenix 1.7.21) lib/phoenix/router.ex:484: Phoenix.Router.__call__/5
+    (logflare 1.31.2) lib/logflare_web/endpoint.ex:1: LogflareWeb.Endpoint.plug_builder_call/2
+
+
+05:25:11.953 [warning] Going Down - :shutdown - Elixir.Logflare.Sources.Source.Supervisor - last state: 
+
+05:25:11.957 [warning] [Elixir.Logflare.Sources.Counters] terminating - shutdown 
+
+05:25:11.966 [notice] Application logflare exited: Logflare.Application.start(:normal, []) returned an error: shutdown: failed to start child: Logflare.SystemMetricsSup
+    ** (EXIT) shutdown: failed to start child: Logflare.SystemMetrics.AllLogsLogged
+        ** (EXIT) an exception was raised:
+            ** (DBConnection.ConnectionError) connection not available and request was dropped from queue after 12879ms. This means requests are coming in and your connection pool cannot serve them fast enough. You can address this by:
+
+  1. Ensuring your database is available and that you can connect to it
+  2. Tracking down slow queries and making sure they are running fast enough
+  3. Increasing the pool_size (although this increases resource consumption)
+  4. Allowing requests to wait longer by increasing :queue_target and :queue_interval
+
+See DBConnection.start_link/2 for more information
+
+                (ecto_sql 3.13.2) lib/ecto/adapters/sql.ex:1098: Ecto.Adapters.SQL.raise_sql_call_error/1
+                (ecto_sql 3.13.2) lib/ecto/adapters/sql.ex:996: Ecto.Adapters.SQL.execute/6
+                (ecto 3.13.5) lib/ecto/repo/queryable.ex:241: Ecto.Repo.Queryable.execute/4
+                (ecto 3.13.5) lib/ecto/repo/queryable.ex:19: Ecto.Repo.Queryable.all/3
+                (ecto 3.13.5) lib/ecto/repo/queryable.ex:163: Ecto.Repo.Queryable.one/3
+                (logflare 1.31.2) lib/logflare/system_metrics/all_logs_logged/all_logs_logged.ex:20: Logflare.SystemMetrics.AllLogsLogged.init/1
+                (stdlib 6.2.2.2) gen_server.erl:2229: :gen_server.init_it/2
+                (stdlib 6.2.2.2) gen_server.erl:2184: :gen_server.init_it/6
+{exit,terminating,[{application_controller,call,2,[{file,"application_controller.erl"},{line,511}]},{application,enqueue_or_start,6,[{file,"application.erl"},{line,380}]},{application,ensure_all_started,3,[{file,"application.erl"},{line,359}]},{elixir,start_cli,0,[{file,"src/elixir.erl"},{line,188}]},{init,start_it,1,[]},{init,start_em,1,[]},{init,do_boot,3,[]}]}
+
+05:25:12.222 [notice]     :alarm_handler: {:clear, :system_memory_high_watermark}
+Kernel pid terminated (application_controller) ("{application_start_failure,logflare,{{shutdown,{failed_to_start_child,'Elixir.Logflare.SystemMetricsSup',{shutdown,{failed_to_start_child,'Elixir.Logflare.SystemMetrics.AllLogsLogged',{#{message => <<\"connection not available and request was dropped from queue after 12879ms. This means requests are coming in and your connection pool cannot serve them fast enough. You can address this by:\n\n  1. Ensuring your database is available and that you can connect to it\n  2. Tracking down slow queries and making sure they are running fast enough\n  3. Increasing the pool_size (although this increases resource consumption)\n  4. Allowing requests to wait longer by increasing :queue_target and :queue_interval\n\nSee DBConnection.start_link/2 for more information\n\">>,reason => queue_timeout,'__struct__' => 'Elixir.DBConnection.ConnectionError','__exception__' => true,severity => error},[{'Elixir.Ecto.Adapters.SQL',raise_sql_call_error,1,[{file,\"lib/ecto/adapters/sql.
+
+Crash dump is being written to: erl_crash.dump...done
+LOGFLARE_NODE_HOST is: 127.0.0.1
+warning: the :backends key for the :logger application is deprecated.
+Here is how to proceed:
+
+1. If you want to set it to [:console], simply remove the option.
+
+2. If you want to disable logging, remove :backends and instead set:
+
+    config :logger, :default_handler, false
+
+3. If you want to configure any other backend, then it is recommended
+   to add `{:logger_backends, "~> 1.0"}` as a dependency and call
+   `LoggerBackends.add(CustomBackend)` in your application start callback
+
+  (logger 1.19.5) lib/logger/app.ex:20: Logger.App.start/2
+  (kernel 10.2.7.3) application_master.erl:295: :application_master.start_it_old/4
+
+
+05:25:27.986 [info] Starting migration

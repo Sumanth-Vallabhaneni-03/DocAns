@@ -73,7 +73,7 @@ def stop_existing_containers(profile=None):
     cmd.extend(["-f", "docker-compose.yml", "down"])
     run_command(cmd)
 
-def wait_for_db_healthy(timeout=180):
+def wait_for_db_healthy(timeout=600):
     """Wait until supabase-db container reports healthy status."""
     print("Waiting for supabase-db to become healthy...")
     deadline = time.time() + timeout
@@ -120,7 +120,7 @@ def start_supabase(environment=None):
 
         # Even if docker compose exits non-zero, the DB might still be coming up.
         # Wait up to 3 minutes for it to become healthy before deciding.
-        if wait_for_db_healthy(timeout=180):
+        if wait_for_db_healthy(timeout=600):
             print("Supabase started successfully.")
             return
 
