@@ -14,7 +14,7 @@ This project merges the core local AI infrastructure from the [local-ai-packaged
 
 * 🔒 **Run Completely Offline:** All services run locally in Docker containers. Your data never leaves your machine.
 * ⚡ **Self-hosted n8n:** Low-code platform with over 400 integrations and advanced AI components.
-* 📄 **Chat with Your Documents:** Upload PDFs, text files, and audio files to get instant, context-aware answers from a local LLM via Open WebUI or the custom InsightsLM frontend.
+* 📄 **Chat with Your Documents:** Upload PDFs, text files, and audio files to get instant, context-aware answers from a local LLM via Open WebUI or the custom DocAns frontend.
 * 🎙️ **Local Audio Transcription:** Transcribe audio files using a local Whisper container.
 * 🎧 **Local Podcast Generation:** Create audio summaries from your source materials using local Coqui text-to-speech models.
 * 🧰 **Comprehensive Stack:** Includes Supabase, Flowise, Qdrant, Neo4j, SearXNG, Caddy, Langfuse, and more.
@@ -28,7 +28,7 @@ This project runs a suite of services locally using Docker. The core components 
 * **Frontend Apps:** 
   * Open WebUI (General AI Chat)
   * Flowise (No-code Agents)
-  * InsightsLM (Document Assistant React/Vite App)
+  * DocAns (Document Assistant React/Vite App)
 * **Backend & Automation:** N8N
 * **Database & Storage:** Supabase (running locally), Qdrant (Vector Store), Neo4j (Knowledge Graph)
 * **AI / ML Services (Local):** 
@@ -96,7 +96,7 @@ python start_services.py --profile cpu
 *(If you run Ollama locally on your Mac instead of in Docker, use `--profile none` and set `OLLAMA_HOST=host.docker.internal:11434` in `docker-compose.yml`.)*
 
 ### 4. Apply Supabase Migrations
-For InsightsLM to function properly, apply the necessary database tables:
+For DocAns to function properly, apply the necessary database tables:
 1. Access the local Supabase dashboard at [http://localhost:18000](http://localhost:18000).
 2. Navigate to the SQL Editor.
 3. Paste the contents of `DocAns/supabase-migration.sql` and run it.
@@ -121,7 +121,7 @@ You can import pre-built n8n workflows for DocAns:
 Once running, your local domains will be immediately available. By default, the `private` environment overrides map the following ports to your localhost:
 
 * **n8n Automation:** [http://localhost:5678](http://localhost:5678)
-* **InsightsLM Frontend:** [http://localhost:3010](http://localhost:3010)
+* **DocAns Frontend:** [http://localhost:3010](http://localhost:3010)
 * **Open WebUI:** [http://localhost:8080](http://localhost:8080) (Configure N8N webhook via workspace functions)
 <<<<<<< HEAD
 * **Supabase Studio & API:** [http://localhost:18000](http://localhost:18000)
