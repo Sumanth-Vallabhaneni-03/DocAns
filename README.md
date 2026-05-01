@@ -123,11 +123,19 @@ Once running, your local domains will be immediately available. By default, the 
 * **n8n Automation:** [http://localhost:5678](http://localhost:5678)
 * **InsightsLM Frontend:** [http://localhost:3010](http://localhost:3010)
 * **Open WebUI:** [http://localhost:8080](http://localhost:8080) (Configure N8N webhook via workspace functions)
+<<<<<<< HEAD
 * **Supabase Studio & API:** [http://localhost:18000](http://localhost:18000)
 * **Langfuse Analytics:** [http://localhost:3000](http://localhost:3000)
 * **Flowise:** [http://localhost:3001](http://localhost:3001)
 * **SearXNG:** [http://localhost:8081](http://localhost:8081)
 * **Neo4j Browser:** [http://localhost:17474](http://localhost:17474)
+=======
+* **Supabase Studio & API:** [http://localhost:8000](http://localhost:8000)
+* **Langfuse Analytics:** [http://localhost:3000](http://localhost:3000)
+* **Flowise:** [http://localhost:3001](http://localhost:3001)
+* **SearXNG:** [http://localhost:8081](http://localhost:8081)
+* **Neo4j Browser:** [http://localhost:7474](http://localhost:7474)
+>>>>>>> 28a042875775fc43d940f0783d1b200560d5aa67
 * **Ollama API:** [http://localhost:11434](http://localhost:11434)
 
 *(Note: Ensure your `.env` contains `SITE_URL=http://localhost:3000` or whatever port you intend to use for authentication redirects.)*
